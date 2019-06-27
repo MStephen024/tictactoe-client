@@ -1,1 +1,26 @@
 @import '~bootstrap/scss/bootstrap';
+
+section {
+  background-color: #0f0;
+  display: flex;
+  max-width: 1300px
+
+}
+
+.top {
+  border: 1px solid;
+  flex: 1
+  margin: auto;
+}
+
+.mid {
+  border: 1px solid;
+  flex: 1;
+  margin: auto;
+}
+
+.bot {
+  border: 1px solid;
+  flex: 1;
+  margin: auto;
+}
