@@ -1,8 +1,6 @@
-# VARIABLE=VALUE sh curl-scripts/auth/gameOver.sh
-
 #!/bin/bash
 
-curl "https://tic-tac-toe-wdi.herokuapp.com/games[?over=]" \
+curl "https://tic-tac-toe-wdi.herokuapp.com/games/${ID}" \
   --include \
   --request GET \
   --header "Authorization: Token token=${TOKEN}" \

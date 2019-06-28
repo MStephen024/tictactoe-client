@@ -1,4 +1,4 @@
-# VARIABLE=VALUE sh curl-scripts/auth/games/:id.sh
+# VARIABLE=VALUE sh curl-scripts/auth/games[?over=].sh
 
 #!/bin/bash
 

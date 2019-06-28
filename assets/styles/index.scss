@@ -3,32 +3,24 @@
 section {
   background-color: #0f0;
   display: flex;
+}
 
+.hide {
+  display: none;
+}
+
+.failure {
+  // red
+  background-color: #f00;
 }
 
 .square {
- border: 0.2rem solid black;
- padding: 1rem;
-}
-//
-// .top {
-//   border: 1px solid;
-//   flex: 1
-//   margin: auto;
-// }
-//
-// .mid {
-//   border: 1px solid;
-//   flex: 1;
-//   margin: auto;
-// }
-//
-// .bot {
-//   border: 1px solid;
-//   flex: 1;
-//   margin: auto;
-// }
-
-.square {
+  border: 0.2rem solid black;
   height: 200px;
+  padding: 1rem;
+}
+
+.success {
+  // green
+  background-color: #080;
 }
