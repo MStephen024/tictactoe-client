@@ -5,6 +5,7 @@ const api = require('./api')
 const ui = require('./ui')
 
 // Sign up event handler, sends the event target to api under 'formData'
+
 const onSignUp = event => {
   event.preventDefault()
 
@@ -16,6 +17,7 @@ const onSignUp = event => {
 }
 
 // Sign in event handler, sends the event target to api under 'formData'
+
 const onSignIn = event => {
   event.preventDefault()
 
@@ -27,6 +29,7 @@ const onSignIn = event => {
 }
 
 // Sign out event handler, sends the event target to api under 'formData'
+
 const onSignOut = event => {
   event.preventDefault()
 
@@ -36,6 +39,7 @@ const onSignOut = event => {
 }
 
 // Change Password event handler, sends the event target to api under 'formData'
+
 const onChangePassword = event => {
   event.preventDefault()
 

@@ -11,59 +11,48 @@
       <script src="public/vendor.js" type="text/javascript" charset="utf-8" defer></script>
       <script src="public/application.js" type="text/javascript" charset="utf-8" defer></script>
     </head>
+
     <body>
       <h1>Tic Tac Toe</h1>
+      <div class="ticTacToe container">
+        <div class="row">
+          <div class="square col-4" id="0"></div>
+          <div class="square col-4" id="1"></div>
+          <div class="square col-4" id="2"></div>
+        </div>
+        <div class="row">
+          <div class="square col-4" id="3"></div>
+          <div class="square col-4" id="4"></div>
+          <div class="square col-4" id="5"></div>
+        </div>
+        <div class="row">
+          <div class="square col-4" id="6"></div>
+          <div class="square col-4" id="7"></div>
+          <div class="square col-4" id="8"></div>
+        </div>
+      </div>
+      <div>
+        <form>
+          <h2>Sign Up</h2>
+          <input name="credentials[email]" type="text" value="an@example.email">
+          <input name="credentials[password]" type="password" value="an example password">
+          <input name="credentials[password_confirmation]" type="password" value="an example password">
+          <button>Sign Up</button>
+        </form>
 
-      <div class="flex-container">
-        <section class="top">
-          <div class="box-1">
-              <p>1
-              </p>
-          </div>
-          <div class="box-2">
-            <p>2
-            </p>
-          </div>
+        <form>
+          <h2>Sign In</h2>
+          <input name="credentials[email]" type="text" value="an@example.email">
+          <input name="credentials[password]" type="password" value="an example password">
+          <button>Sign In</button>
+        </form>
 
-          <div class="box-3">
-            <p>3
-            </p>
-          </div>
-        </section>
-
-        <section class="mid">
-          <div class="box-4">
-            <p>4
-            </p>
-          </div>
-
-          <div class="box-5">
-            <p>5
-            </p>
-          </div>
-
-          <div class="box-6">
-            <p>6
-            </p>
-          </div>
-        </section>
-
-        <section class="bot">
-          <div class="box-7">
-            <p>7
-            </p>
-          </div>
-
-          <div class="box-8">
-            <p>8
-            </p>
-          </div>
-
-          <div class="box-9">
-            <p>9
-            </p>
-          </div>
-        </section>
+        <form>
+          <h2>Change Password</h2>
+          <input name="passwords[old]" type="password">
+          <input name="passwords[new]" type="password">
+          <button>Change Password</button>
+        </form>
       </div>
     </body>
 </html>
