@@ -3,29 +3,36 @@
 const config = require('../config')
 const store = require('../store')
 
-const gridChoice = formData => {
-  console.log('It worked?')
+const gridChoice = event => {
+  return event
 }
-// explain what and why. info comes from game api but copy/paste. should
+
 // formData change to something that relates to gameActions? changed to gameData
+
 const gameActions = gameData => {
   return $.ajax({
     url: config.apiUrl + '/games[?over=]',
     data: gameData,
-    method: 'GET'
+    method: 'GET',
+    headers: {
+      Authorization: 'Token token=' + store.user.token
+    }
   })
 }
 
-const createGame = formData => {
+const startGame = data => {
   return $.ajax({
     url: config.apiUrl + '/games',
-    data: formData,
-    method: 'POST'
+    data: {},
+    method: 'POST',
+    headers: {
+      Authorization: 'Token token=' + store.user.token
+    }
   })
 }
 
-
 module.exports = {
+  startGame,
   gridChoice,
   gameActions
 }
