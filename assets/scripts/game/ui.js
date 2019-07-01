@@ -23,6 +23,11 @@ const failureMessage = message => {
 const clickSuccess = response => {
   const square = response.target
   $(square).text(store.player)
+  if (store.gameOver === true) {
+    announceWinner()
+  } else {
+    nextTurn()
+  }
   console.log(store.cells)
 }
 

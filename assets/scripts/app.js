@@ -17,5 +17,5 @@ $(() => {
 
 $(() => {
   $('#start-game').on('click', gameEvents.onStartGame)
-  $('.square').on('click', gameEvents.onGridChoice)
+  $('.square').on('click', gameEvents.onPlayGame)
 })

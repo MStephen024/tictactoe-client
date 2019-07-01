@@ -7,12 +7,9 @@ const gridChoice = event => {
   return event
 }
 
-// formData change to something that relates to gameActions? changed to gameData
-
-const gameActions = gameData => {
+const checkUserGames = () => {
   return $.ajax({
     url: config.apiUrl + '/games[?over=]',
-    data: gameData,
     method: 'GET',
     headers: {
       Authorization: 'Token token=' + store.user.token
@@ -20,9 +17,9 @@ const gameActions = gameData => {
   })
 }
 
-const startGame = data => {
+const createGame = data => {
   return $.ajax({
-    url: config.apiUrl + '/games',
+    url: config.apiUrl + '/games/',
     data: {},
     method: 'POST',
     headers: {
@@ -31,8 +28,39 @@ const startGame = data => {
   })
 }
 
+const showGames = data => {
+  return $.ajax({
+    url: config.apiUrl + '/games' + store.game.id,
+    method: 'GET',
+    headers: {
+      Authorization: 'Token token=' + store.user.token
+    }
+  })
+}
+
+const updateGame = data => {
+  return $.ajax({
+    url: config.apiUrl + '/games/' + store.game.id,
+    method: 'PATCH',
+    headers: {
+      Authorization: 'Token token=' + store.user.token
+    },
+    data: {
+      'game': {
+        'cell': {
+          'index': store.index,
+          'value': store.player
+        },
+        'over': store.gameOver
+      }
+    }
+  })
+}
+
 module.exports = {
-  startGame,
-  gridChoice,
-  gameActions
+  checkUserGames,
+  createGame,
+  showGames,
+  updateGame,
+  gridChoice
 }
