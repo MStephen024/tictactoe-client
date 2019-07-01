@@ -9,7 +9,7 @@ const gridChoice = event => {
 
 const checkUserGames = () => {
   return $.ajax({
-    url: config.apiUrl + '/games[?over=]',
+    url: config.apiUrl + '/games',
     method: 'GET',
     headers: {
       Authorization: 'Token token=' + store.user.token

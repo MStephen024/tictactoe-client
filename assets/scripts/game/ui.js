@@ -25,6 +25,8 @@ const clickSuccess = response => {
   $(square).text(store.player)
   if (store.gameOver === true) {
     announceWinner()
+  } else if (store.gameTurn === 9 && store.gameOver === false) {
+    drawGame()
   } else {
     nextTurn()
   }
@@ -32,7 +34,7 @@ const clickSuccess = response => {
 }
 
 const wrongInput = () => {
-  failureMessage('Block already has an input')
+  failureMessage('Choose an empty square. This square already contains an input')
 }
 
 const showBoard = function (response) {
@@ -51,10 +53,15 @@ const nextTurn = () => {
   $('form').trigger('reset')
 }
 
+const drawGame = () => {
+  $('#message').text(`It's a draw!`)
+}
+
 module.exports = {
   clickSuccess,
   wrongInput,
   showBoard,
   announceWinner,
-  nextTurn
+  nextTurn,
+  drawGame
 }

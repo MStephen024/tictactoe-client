@@ -1,8 +1,6 @@
 'use strict'
 
 // Event Handler
-
-const getFormFields = require('../../../lib/get-form-fields')
 const api = require('./api')
 const ui = require('./ui')
 const store = require('../store')
@@ -15,7 +13,7 @@ const store = require('../store')
 
 const onStartGame = event => {
   store.cells = ['', '', '', '', '', '', '', '', '']
-  store.gameMove = 0
+  store.gameTurn = 0
   api.createGame(event)
     .then(ui.showBoard)
 }
@@ -30,20 +28,21 @@ const onPlayGame = event => {
       // store index of empty soon to be filled box
       store.index = $(event.target).attr('id')
       // Determine if we put an X or and O
-      if (store.gameMove % 2 === 0) {
+      if (store.gameTurn % 2 === 0) {
         store.player = 'X'
-        store.gameMove++
+        store.gameTurn++
       } else {
         store.player = 'O'
-        store.gameMove++
+        store.gameTurn++
       }
       store.cells[store.index] = store.player
       store.gameOver = checkForWinner()
       api.updateGame(event)
         .then(ui.clickSuccess(event))
     } else {
-      ui.wrongInput()
+      $(square).off(event.target)
     }
+    console.log(store.gameTurn)
   } else {
     ui.announceWinner()
   }
