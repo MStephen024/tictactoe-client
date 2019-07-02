@@ -48,7 +48,7 @@ const indexGamesSuccess = data => {
   // `) // string interpolation
   // $('#games-display').append(gameHtml)
   // $('#message').text('You did it! Niceeee!')
-  // $('#message').css('color', 'green') // this will appear if you typo the url in api.js eg. change ui.js url to '+ /bools'
+  // $('#message').css('color', 'green')
   // $('#message').show()
   // hideMessaging()
   // })
@@ -68,7 +68,9 @@ const wrongInput = () => {
 
 const showBoard = response => {
   $('#board').removeClass('hide-board')
+  $('#replay').removeClass('hide')
   store.game = response.game
+  $('.square').text('')
 }
 
 const announceWinner = () => {

@@ -95,9 +95,18 @@ const checkForWinner = () => {
   }
 }
 
+const onReplay = event => {
+  store.cells = ['', '', '', '', '', '', '', '', '']
+  store.gameTurn = 0
+  store.gameOver = false
+  api.createGame(event)
+    .then(ui.showBoard)
+}
+
 module.exports = {
   onPlayGame,
   onStartGame,
   checkForWinner,
-  onGetGames
+  onGetGames,
+  onReplay
 }

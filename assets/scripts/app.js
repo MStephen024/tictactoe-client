@@ -19,4 +19,5 @@ $(() => {
   $('#start-game').on('click', gameEvents.onStartGame)
   $('.square').on('click', gameEvents.onPlayGame)
   $('#index-games').on('click', gameEvents.onGetGames)
+  $('#replay').on('click', gameEvents.onReplay)
 })
