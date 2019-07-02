@@ -16,7 +16,7 @@
       <h1>Tic Tac Toe</h1>
       <h3 id="message" class="result"></h3>
 
-      <div id="board" class="tic-tac-toe hide">
+      <div id="board" class="hide-board">
         <div class="row">
           <div class="square col-4" id="0"></div>
           <div class="square col-4" id="1"></div>
@@ -50,20 +50,20 @@
           <button class="btn-primary">Sign In</button>
         </form>
 
-        <form id="change-password">
+        <form id="change-password" class="hide">
           <h2>Change Password</h2>
           <input type="password" name="passwords[old]" placeholder="Old Password">
           <input type="password" name="passwords[new]" placeholder="New Password">
           <button class="btn-primary">Change Password</button>
         </form>
 
-        <form id="sign-out">
+        <form id="sign-out" class="hide">
           <button class="btn-primary">Sign Out</button>
         </form>
 
-        <button id="start-game" class="btn-primary hide">Start Game</button>
+        <button id="index-games" class="hide">Stats</button>
 
-        <button id="replay-game" class="btn-primary hide">Replay</button>
+        <button id="start-game" class="hide btn-primary">Start Game</button>
       </div>
     </body>
 </html>

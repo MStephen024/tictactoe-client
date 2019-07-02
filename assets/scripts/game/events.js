@@ -5,12 +5,6 @@ const api = require('./api')
 const ui = require('./ui')
 const store = require('../store')
 
-// use store to set up 'player value' = x or o
-// set event.target.text to the player value
-// function that switches player depending on X or O
-
-// leads into if/else for empty space to not have same value on same space
-
 const onStartGame = event => {
   store.cells = ['', '', '', '', '', '', '', '', '']
   store.gameTurn = 0
@@ -20,7 +14,7 @@ const onStartGame = event => {
 
 const onPlayGame = event => {
   event.preventDefault()
-
+  console.log(event)
   // check if the field is empty if empty continue with game
   const square = event.target
   if (!store.gameOver) {
@@ -46,6 +40,12 @@ const onPlayGame = event => {
   } else {
     ui.announceWinner()
   }
+}
+
+const onGetGames = event => {
+  api.indexGames()
+    .then(ui.indexGamesSuccess)
+    .catch(ui.indexGamesFailure)
 }
 
 const checkForWinner = () => {
@@ -98,5 +98,6 @@ const checkForWinner = () => {
 module.exports = {
   onPlayGame,
   onStartGame,
-  checkForWinner
+  checkForWinner,
+  onGetGames
 }

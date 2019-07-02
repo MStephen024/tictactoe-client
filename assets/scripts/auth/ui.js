@@ -6,7 +6,6 @@ const successMessage = message => {
   $('#message').text(message)
   $('#message').removeClass('failure')
   $('#message').addClass('success')
-
   // Clear out our forms
   $('form').trigger('reset')
 }
@@ -30,10 +29,13 @@ const signUpFailure = () => {
 
 const signInSuccessful = responseData => {
   console.log('responseData is ', responseData)
+  $('#change-password').removeClass('hide')
+  $('#sign-out').removeClass('hide')
+  $('#index-games').removeClass('hide')
+  $('#start-game').removeClass('hide')
+  $('#sign-in').addClass('hide')
+  $('#sign-up').addClass('hide')
   successMessage('You signed in successfully')
-
-  // Keeping track of the user so we can have the token for the API
-  // we use 'store' so we can access the token in any file
   store.user = responseData.user
 }
 
@@ -43,9 +45,11 @@ const signInFailure = () => {
 
 const signOutSuccessful = () => {
   successMessage('You signed out successfully')
-
-  // Keeping track of the user so we can have the token for the API
-  // we use 'store' so we can access the token in any file
+  $('#sign-in').removeClass('hide')
+  $('#sign-up').removeClass('hide')
+  $('#sign-out').addClass('hide')
+  $('#change-password').addClass('hide')
+  $('#index-games').addClass('hide')
   store.user = null
 }
 

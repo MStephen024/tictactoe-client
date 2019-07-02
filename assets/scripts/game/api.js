@@ -7,7 +7,7 @@ const gridChoice = event => {
   return event
 }
 
-const checkUserGames = () => {
+const indexGames = () => {
   return $.ajax({
     url: config.apiUrl + '/games',
     method: 'GET',
@@ -58,7 +58,7 @@ const updateGame = data => {
 }
 
 module.exports = {
-  checkUserGames,
+  indexGames,
   createGame,
   showGames,
   updateGame,
