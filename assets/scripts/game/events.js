@@ -14,7 +14,6 @@ const onStartGame = event => {
 
 const onPlayGame = event => {
   event.preventDefault()
-  console.log(event)
   // check if the field is empty if empty continue with game
   const square = event.target
   if (!store.gameOver) {
@@ -36,7 +35,6 @@ const onPlayGame = event => {
     } else {
       $(square).off(event.target)
     }
-    console.log(store.gameTurn)
   } else {
     ui.announceWinner()
   }
@@ -49,7 +47,6 @@ const onGetGames = event => {
 }
 
 const checkForWinner = () => {
-  console.log(store.cells)
   if (
     (store.cells[0] === 'X' && store.cells[1] === 'X' && store.cells[2] === 'X') ||
     (store.cells[0] === 'O' && store.cells[1] === 'O' && store.cells[2] === 'O')

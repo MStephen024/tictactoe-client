@@ -28,7 +28,6 @@ const signUpFailure = () => {
 }
 
 const signInSuccessful = responseData => {
-  console.log('responseData is ', responseData)
   $('#change-password').removeClass('hide')
   $('#sign-out').removeClass('hide')
   $('#index-games').removeClass('hide')
@@ -50,6 +49,7 @@ const signOutSuccessful = () => {
   $('#sign-out').addClass('hide')
   $('#change-password').addClass('hide')
   $('#index-games').addClass('hide')
+  $('#start-game').addClass('hide')
   store.user = null
 }
 

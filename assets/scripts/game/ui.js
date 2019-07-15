@@ -54,8 +54,7 @@ const indexGamesSuccess = data => {
   // })
 }
 
-const indexGamesFailure = error => {
-  console.log('index games failure', error)
+const indexGamesFailure = () => {
   $('#message').text('Index Games Failure!! Try again...')
   $('#message').css('color', 'red')
   $('#message').show()
