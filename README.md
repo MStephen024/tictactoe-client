@@ -1,6 +1,6 @@
 # Tic Tac Toe!
 
-## Prologue to the Beginning of the Ultimate Quest
+## Prologue of the Ultimate Quest
 
 The lifelong game of Tic Tac Toe will come to life in this amazing rendition
 where creativity and untapped potential collide. Join me through this unique
